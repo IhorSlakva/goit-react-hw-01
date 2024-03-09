@@ -4,8 +4,8 @@ const FriendList = ({ friends }) => {
   console.log(friends);
   const isOnlineFriend = friends.isOnline === true;
   return (
-    <div>
-      <ul>{friends.map(friend => {
+    <ul>
+      {friends.map(friend => {
         return (
               <FriendListItem
                 key={friend.id}
@@ -15,9 +15,7 @@ const FriendList = ({ friends }) => {
               />
         )
       })}
-          
-       </ul>
-    </div>
+    </ul>
   )
 }
 
