@@ -1,22 +1,21 @@
 import FriendListItem from "../FriendListItem/FriendListItem";
+import css from "./FriendList.module.css";
 
 const FriendList = ({ friends }) => {
-  console.log(friends);
-  const isOnlineFriend = friends.isOnline === true;
   return (
-    <ul>
-      {friends.map(friend => {
+    <ul className={css.list}>
+      {friends.map((friend) => {
         return (
-              <FriendListItem
-                key={friend.id}
-                avatar={friend.avatar}
-                name={friend.name}
-                isOnline={isOnlineFriend}
-              />
-        )
+          <FriendListItem
+            key={friend.id}
+            avatar={friend.avatar}
+            name={friend.name}
+            isOnline={friend.isOnline}
+          />
+        );
       })}
     </ul>
-  )
-}
+  );
+};
 
-export default FriendList
+export default FriendList;
